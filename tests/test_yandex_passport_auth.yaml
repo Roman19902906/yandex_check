@@ -1,0 +1,20 @@
+test_correct_login_and_password:
+  - login: ****
+    password: *****
+
+  - login: ****
+    password: ****
+
+test_correct_phone:
+  - phone: ***
+    phone_title: +* *** ***-**-**
+
+test_incorrect_login:
+  - login: 0
+
+test_incorrect_password:
+  - login: p****
+    password: 0
+
+test_incorrect_phone:
+  - phone: 1111111111
