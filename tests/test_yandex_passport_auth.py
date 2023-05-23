@@ -3,10 +3,12 @@ import parametrize_from_file
 import pysnooper
 
 
+# реализован подход получения параметров из yaml файла который лежит в одной дирректории с тестом
 @parametrize_from_file
 @pysnooper.snoop()
 def test_correct_login_and_password(auth_page, login, password):
     with allure.step('Шаг 1.Перейти на страницу авторизации'):
+        # Реализован env для получения урла (установлен плагин)
         auth_page.open_auth_page()
     with allure.step('Шаг 2.Клик по кнопке почта'):
         auth_page.click_mail_button()

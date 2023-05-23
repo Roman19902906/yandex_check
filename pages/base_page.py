@@ -1,16 +1,23 @@
 # -*- coding: utf-8 -*-
+import allure
 from PIL import ImageGrab
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
+
+from envars import BASE_URL_YANDEX_PASSPORT
 
 
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step('Открытие страницы авторизации')
+    def open_auth_page(self):
+        self.driver.get(BASE_URL_YANDEX_PASSPORT)
+
     @property
     def wait_short(self):
-        return WebDriverWait(self.driver, 40)
+        return WebDriverWait(self.driver, 10)
 
     @property
     def wait(self):

@@ -18,7 +18,7 @@ class AuthPage(BasePage):
         # Кнопка 'Войти'
         self.button_enter = lambda: self.driver.find_element(By.ID, 'passp:sign-in')
         # Лоудер
-        self.pop_up = lambda: self.driver.find_element(By.CLASS_NAME,'.passp-page-overlay_showed')
+        self.pop_up = lambda: self.driver.find_element(By.CLASS_NAME, '.passp-page-overlay_showed')
         # Кнопка 'Создать id'
         self.button_create_id = lambda: self.driver.find_element(By.ID, 'passp:exp-register')
         # Кнопка 'Войти по qr коду'
@@ -45,14 +45,6 @@ class AuthPage(BasePage):
         self.title_password_field = lambda: self.driver.find_element(By.ID, 'field:input-passwd:hint')
         # Неверный номер телефона
         self.title_phone_field = lambda: self.driver.find_element(By.ID, 'field:input-phone:hint')
-
-
-
-
-
-    @allure.step('Открытие страницы авторизации')
-    def open_auth_page(self):
-        self.driver.get(BASE_URL_YANDEX_PASSPORT)
 
     @allure.step('Нажать кнопку "Войти"')
     def click_button_enter(self):
